@@ -116,7 +116,6 @@ func testExchangedataForWatcher(t *testing.T, watchDir bool) {
 
 		// 2. Delete the intermediate file
 		err := os.Remove(intermediate)
-
 		if err != nil {
 			t.Fatalf("[%d] remove %s failed: %s", i, intermediate, err)
 		}
@@ -158,7 +157,7 @@ func TestExchangedataInWatchedFile(t *testing.T) {
 }
 
 func createAndSyncFile(t *testing.T, filepath string) {
-	f1, err := os.OpenFile(filepath, os.O_WRONLY|os.O_CREATE, 0666)
+	f1, err := os.OpenFile(filepath, os.O_WRONLY|os.O_CREATE, 0o666)
 	if err != nil {
 		t.Fatalf("creating %s failed: %s", filepath, err)
 	}

@@ -384,7 +384,7 @@ func TestInotifyOverflow(t *testing.T) {
 	for dn := 0; dn < numDirs; dn++ {
 		testSubdir := fmt.Sprintf("%s/%d", testDir, dn)
 
-		err := os.Mkdir(testSubdir, 0777)
+		err := os.Mkdir(testSubdir, 0o777)
 		if err != nil {
 			t.Fatalf("Cannot create subdir: %v", err)
 		}
